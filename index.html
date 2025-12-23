@@ -147,6 +147,15 @@
       color: #003d73;
       font-weight: 500;
       letter-spacing: 0.5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .folder:hover {
+      transform: translateX(4px);
+    }
+    .folder:hover .folder-box {
+      filter: brightness(1.1);
     }
     .folder-box {
       position: relative;
@@ -195,17 +204,17 @@
       <div>
         <div class="title" data-text="personal projects">
           personal<br>
-          <span>projects</span>
+          <span>...</span>
         </div>
         <div class="badge">2026</div>
         <div class="description">
           Hello! I'm currently a third-year student at UC Berkeley studying Mechanical Engineering and Architecture. 
           I'm driven by my passion for sustainability and design. I love being able to work with my hands. I hold the belief that good design should serve both people and their surroundings.
         </div>
-        <div class="folder">
+        <a href="projects.html" class="folder">
           <div class="folder-box"></div>
           VANESSA_PORTFOLIO
-        </div>
+        </a>
       </div>
       <div class="image-wrap">
         <img src="images/portrait.jpg" alt="portrait">
