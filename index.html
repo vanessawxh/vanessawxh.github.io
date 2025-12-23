@@ -2,69 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Personal Projects 2024</title>
-
+  <title>Personal Projects 2026</title>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: Inter, sans-serif;
       background: #f6f5f3;
-      color: #111;
+      color: #001f3f;
     }
-
     .page {
       min-height: 100vh;
       padding: 60px 80px;
     }
-
     .layout {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       align-items: center;
       gap: 60px;
     }
-
     /* LEFT SIDE */
-
     .title {
-      font-family: Playfair Display, serif;
+      font-family: Anton, Impact, sans-serif;
       font-size: 72px;
-      line-height: 0.95;
-      letter-spacing: -1px;
+      line-height: 0.85;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #001f3f;
+      position: relative;
     }
-
+    .title::before {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      text-shadow: -2px 0 #ff00ff;
+      top: 0;
+      color: #001f3f;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-1 2s infinite linear alternate-reverse;
+    }
+    .title::after {
+      content: attr(data-text);
+      position: absolute;
+      left: -2px;
+      text-shadow: 2px 0 #00ffff;
+      top: 0;
+      color: #001f3f;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-2 3s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-1 {
+      0% { clip: rect(42px, 999px, 44px, 0); }
+      10% { clip: rect(12px, 999px, 59px, 0); }
+      20% { clip: rect(48px, 999px, 29px, 0); }
+      30% { clip: rect(18px, 999px, 83px, 0); }
+      40% { clip: rect(63px, 999px, 27px, 0); }
+      50% { clip: rect(15px, 999px, 40px, 0); }
+      60% { clip: rect(25px, 999px, 66px, 0); }
+      70% { clip: rect(9px, 999px, 46px, 0); }
+      80% { clip: rect(52px, 999px, 32px, 0); }
+      90% { clip: rect(35px, 999px, 58px, 0); }
+      100% { clip: rect(21px, 999px, 50px, 0); }
+    }
+    @keyframes glitch-2 {
+      0% { clip: rect(65px, 999px, 23px, 0); }
+      10% { clip: rect(37px, 999px, 71px, 0); }
+      20% { clip: rect(44px, 999px, 18px, 0); }
+      30% { clip: rect(53px, 999px, 34px, 0); }
+      40% { clip: rect(11px, 999px, 76px, 0); }
+      50% { clip: rect(29px, 999px, 61px, 0); }
+      60% { clip: rect(47px, 999px, 26px, 0); }
+      70% { clip: rect(16px, 999px, 54px, 0); }
+      80% { clip: rect(38px, 999px, 43px, 0); }
+      90% { clip: rect(60px, 999px, 31px, 0); }
+      100% { clip: rect(22px, 999px, 68px, 0); }
+    }
     .title span {
       display: block;
-      font-weight: 600;
+      font-weight: 400;
     }
-
     .badge {
       display: inline-block;
       margin-top: 12px;
       padding: 4px 10px;
-      border: 1px solid #111;
+      border: 1px solid #001f3f;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 400;
+      color: #001f3f;
     }
-
     .description {
       margin-top: 24px;
       max-width: 360px;
       font-size: 14px;
       line-height: 1.6;
-      color: #333;
+      color: #003d73;
     }
-
     /* RIGHT SIDE */
-
     .image-wrap {
       position: relative;
       width: 420px;
@@ -74,15 +114,13 @@
       background: #ddd;
       box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     }
-
     .image-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       filter: contrast(1.05) saturate(1.05);
     }
-
-    /* subtle “lens” ring */
+    /* subtle "lens" ring */
     .image-wrap::after {
       content: "";
       position: absolute;
@@ -91,75 +129,80 @@
       border: 2px solid rgba(255,255,255,0.4);
       pointer-events: none;
     }
-
     /* FOOTER TAG */
-
     .folder {
       margin-top: 60px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 12px;
-      color: #555;
+      font-size: 11px;
+      color: #003d73;
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
-
     .folder-box {
-      width: 36px;
-      height: 26px;
+      position: relative;
+      width: 42px;
+      height: 32px;
       background: #f2c94c;
-      border: 1px solid #111;
+      border-radius: 0 4px 4px 4px;
     }
-
+    .folder-box::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 18px;
+      height: 6px;
+      background: #f2c94c;
+      border-radius: 2px 2px 0 0;
+    }
+    .folder-box::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: #fdd663;
+      border-radius: 0 2px 2px 2px;
+    }
     /* RESPONSIVE */
-
     @media (max-width: 900px) {
       .layout {
         grid-template-columns: 1fr;
         gap: 40px;
       }
-
       .image-wrap {
         width: 320px;
         height: 320px;
       }
-
       .title {
         font-size: 56px;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="page">
     <div class="layout">
       
       <div>
-        <div class="title">
+        <div class="title" data-text="personal projects">
           personal<br>
           <span>projects</span>
         </div>
-
-        <div class="badge">2024</div>
-
+        <div class="badge">2026</div>
         <div class="description">
-          Projects I worked on that surround my own personal branding,
-          experimentation, and visual identity.
+          Hello! I'm currently a third-year student at UC Berkeley studying Mechanical Engineering and Architecture. 
+          I'm driven by my passion for sustainability and design. I love being able to work with my hands. I hold the belief that good design should serve both people and their surroundings.
         </div>
-
         <div class="folder">
           <div class="folder-box"></div>
-          YOURNAME_DIGITAL
+          VANESSA_PORTFOLIO
         </div>
       </div>
-
       <div class="image-wrap">
         <img src="images/portrait.jpg" alt="portrait">
       </div>
-
     </div>
   </div>
 </body>
 </html>
-
-
