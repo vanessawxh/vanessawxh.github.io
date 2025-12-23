@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Your Name</title>
+  <title>Personal Projects 2024</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -13,134 +14,152 @@
 
     body {
       margin: 0;
-      background: #0b0b0b;
-      color: #eaeaea;
       font-family: Inter, sans-serif;
-      overflow-x: hidden;
+      background: #f6f5f3;
+      color: #111;
     }
 
-    header {
-      padding: 60px 40px;
-      text-align: center;
-      border-bottom: 1px solid #222;
+    .page {
+      min-height: 100vh;
+      padding: 60px 80px;
     }
 
-    header h1 {
-      font-family: VT323, monospace;
-      font-size: 64px;
-      letter-spacing: 2px;
-      color: #c8f7ff;
-      text-shadow: 0 0 10px rgba(200,247,255,0.4);
-    }
-
-    header p {
-      color: #aaa;
-      max-width: 600px;
-      margin: 20px auto 0;
-      font-size: 14px;
-    }
-
-    .grid {
+    .layout {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 40px;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 60px;
     }
 
-    .card {
-      background: #111;
-      border: 1px solid #222;
-      padding: 10px;
-      position: relative;
-      overflow: hidden;
+    /* LEFT SIDE */
+
+    .title {
+      font-family: Playfair Display, serif;
+      font-size: 72px;
+      line-height: 0.95;
+      letter-spacing: -1px;
     }
 
-    .card img {
-      width: 100%;
+    .title span {
       display: block;
-      filter: contrast(1.1) saturate(1.1);
+      font-weight: 600;
     }
 
-    .card span {
-      position: absolute;
-      bottom: 8px;
-      left: 8px;
-      font-family: VT323, monospace;
-      font-size: 18px;
-      background: rgba(0,0,0,0.6);
-      padding: 2px 6px;
+    .badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border: 1px solid #111;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 400;
     }
 
-    .about {
-      padding: 60px 40px;
-      border-top: 1px solid #222;
-    }
-
-    .about h2 {
-      font-family: VT323, monospace;
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #ffbdf7;
-    }
-
-    .about p {
-      max-width: 700px;
-      color: #ccc;
+    .description {
+      margin-top: 24px;
+      max-width: 360px;
+      font-size: 14px;
       line-height: 1.6;
+      color: #333;
     }
 
-    footer {
-      padding: 30px;
-      text-align: center;
+    /* RIGHT SIDE */
+
+    .image-wrap {
+      position: relative;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #ddd;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) saturate(1.05);
+    }
+
+    /* subtle “lens” ring */
+    .image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.4);
+      pointer-events: none;
+    }
+
+    /* FOOTER TAG */
+
+    .folder {
+      margin-top: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-size: 12px;
-      color: #666;
-      border-top: 1px solid #222;
+      color: #555;
+    }
+
+    .folder-box {
+      width: 36px;
+      height: 26px;
+      background: #f2c94c;
+      border: 1px solid #111;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .image-wrap {
+        width: 320px;
+        height: 320px;
+      }
+
+      .title {
+        font-size: 56px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="page">
+    <div class="layout">
+      
+      <div>
+        <div class="title">
+          personal<br>
+          <span>projects</span>
+        </div>
 
-  <header>
-    <h1>YOUR NAME</h1>
-    <p>Digital collage, experimental design, Y2K internet artifacts.</p>
-  </header>
+        <div class="badge">2024</div>
 
-  <section class="grid">
-    <div class="card">
-      <img src="https://picsum.photos/600/800?random=1">
-      <span>project_01</span>
+        <div class="description">
+          Projects I worked on that surround my own personal branding,
+          experimentation, and visual identity.
+        </div>
+
+        <div class="folder">
+          <div class="folder-box"></div>
+          YOURNAME_DIGITAL
+        </div>
+      </div>
+
+      <div class="image-wrap">
+        <img src="images/portrait.jpg" alt="portrait">
+      </div>
+
     </div>
-
-    <div class="card">
-      <img src="https://picsum.photos/600/700?random=2">
-      <span>project_02</span>
-    </div>
-
-    <div class="card">
-      <img src="https://picsum.photos/600/600?random=3">
-      <span>project_03</span>
-    </div>
-
-    <div class="card">
-      <img src="https://picsum.photos/600/750?random=4">
-      <span>project_04</span>
-    </div>
-  </section>
-
-  <section class="about">
-    <h2>about.txt</h2>
-    <p>
-      I create digital work inspired by early internet culture, scanned media,
-      archives, and visual noise. My practice blends collage, typography, and
-      experimentation with technology.
-    </p>
-  </section>
-
-  <footer>
-    © 2025 · yourname@email.com · instagram / github
-  </footer>
-
+  </div>
 </body>
 </html>
+
 
