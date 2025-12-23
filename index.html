@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Personal Projects 2026</title>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400,700&family=VT323&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -27,35 +27,35 @@
     }
     /* LEFT SIDE */
     .title {
-      font-family: Anton, Impact, sans-serif;
+      font-family: 'Courier Prime', 'Courier New', monospace;
       font-size: 72px;
-      line-height: 0.85;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: 1px;
       color: #001f3f;
       position: relative;
     }
     .title::before {
       content: attr(data-text);
       position: absolute;
-      left: 2px;
-      text-shadow: -2px 0 #ff00ff;
+      left: 1px;
+      text-shadow: -1px 0 rgba(255, 0, 255, 0.3);
       top: 0;
       color: #001f3f;
       overflow: hidden;
       clip: rect(0, 900px, 0, 0);
-      animation: glitch-1 2s infinite linear alternate-reverse;
+      animation: glitch-1 3s infinite linear alternate-reverse;
     }
     .title::after {
       content: attr(data-text);
       position: absolute;
-      left: -2px;
-      text-shadow: 2px 0 #00ffff;
+      left: -1px;
+      text-shadow: 1px 0 rgba(0, 255, 255, 0.3);
       top: 0;
       color: #001f3f;
       overflow: hidden;
       clip: rect(0, 900px, 0, 0);
-      animation: glitch-2 3s infinite linear alternate-reverse;
+      animation: glitch-2 4s infinite linear alternate-reverse;
     }
     @keyframes glitch-1 {
       0% { clip: rect(42px, 999px, 44px, 0); }
