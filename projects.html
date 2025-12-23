@@ -1,1 +1,260 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vanessa's Projects</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'BlueScreen';
+      src: url('fonts/BlueScreen.woff2') format('woff2'),
+           url('fonts/BlueScreen.woff') format('woff'),
+           url('fonts/BlueScreen.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #f6f5f3;
+      color: #001f3f;
+    }
+    .page {
+      min-height: 100vh;
+      padding: 60px 80px;
+    }
+    
+    /* HEADER */
+    .header {
+      margin-bottom: 80px;
+    }
+    .page-title {
+      font-family: 'BlueScreen', 'Courier New', monospace;
+      font-size: 48px;
+      font-weight: 400;
+      color: #001f3f;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .page-title::before {
+      content: attr(data-text);
+      position: absolute;
+      left: 1px;
+      text-shadow: -1px 0 rgba(255, 0, 255, 0.3);
+      top: 0;
+      color: #001f3f;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-1 3s infinite linear alternate-reverse;
+    }
+    .page-title::after {
+      content: attr(data-text);
+      position: absolute;
+      left: -1px;
+      text-shadow: 1px 0 rgba(0, 255, 255, 0.3);
+      top: 0;
+      color: #001f3f;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-2 4s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-1 {
+      0% { clip: rect(42px, 999px, 44px, 0); }
+      10% { clip: rect(12px, 999px, 59px, 0); }
+      20% { clip: rect(48px, 999px, 29px, 0); }
+      30% { clip: rect(18px, 999px, 83px, 0); }
+      40% { clip: rect(63px, 999px, 27px, 0); }
+      50% { clip: rect(15px, 999px, 40px, 0); }
+      60% { clip: rect(25px, 999px, 66px, 0); }
+      70% { clip: rect(9px, 999px, 46px, 0); }
+      80% { clip: rect(52px, 999px, 32px, 0); }
+      90% { clip: rect(35px, 999px, 58px, 0); }
+      100% { clip: rect(21px, 999px, 50px, 0); }
+    }
+    @keyframes glitch-2 {
+      0% { clip: rect(65px, 999px, 23px, 0); }
+      10% { clip: rect(37px, 999px, 71px, 0); }
+      20% { clip: rect(44px, 999px, 18px, 0); }
+      30% { clip: rect(53px, 999px, 34px, 0); }
+      40% { clip: rect(11px, 999px, 76px, 0); }
+      50% { clip: rect(29px, 999px, 61px, 0); }
+      60% { clip: rect(47px, 999px, 26px, 0); }
+      70% { clip: rect(16px, 999px, 54px, 0); }
+      80% { clip: rect(38px, 999px, 43px, 0); }
+      90% { clip: rect(60px, 999px, 31px, 0); }
+      100% { clip: rect(22px, 999px, 68px, 0); }
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 13px;
+      color: #003d73;
+      text-decoration: none;
+      margin-bottom: 20px;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: #001f3f;
+    }
+    
+    /* FOLDERS GRID */
+    .folders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 60px;
+      max-width: 900px;
+    }
+    
+    /* FOLDER CARD */
+    .folder-card {
+      text-decoration: none;
+      display: block;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .folder-card:hover {
+      transform: translateY(-8px);
+    }
+    .folder-card:hover .folder-icon {
+      filter: brightness(1.1);
+    }
+    
+    .folder-icon {
+      position: relative;
+      width: 180px;
+      height: 140px;
+      margin: 0 auto 24px;
+      transition: filter 0.3s;
+    }
+    
+    /* Large folder shape */
+    .folder-main {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 110px;
+      border-radius: 0 8px 8px 8px;
+      transition: background 0.3s;
+    }
+    
+    .folder-tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70px;
+      height: 30px;
+      border-radius: 6px 6px 0 0;
+      transition: background 0.3s;
+    }
+    
+    .folder-inner {
+      position: absolute;
+      inset: 6px;
+      border-radius: 0 4px 4px 4px;
+      opacity: 0.4;
+    }
+    
+    /* Technical folder - Blue */
+    .folder-card.technical .folder-main {
+      background: #4a90e2;
+    }
+    .folder-card.technical .folder-tab {
+      background: #4a90e2;
+    }
+    .folder-card.technical .folder-inner {
+      background: #7fb3f5;
+    }
+    
+    /* Design folder - Purple */
+    .folder-card.design .folder-main {
+      background: #9b59b6;
+    }
+    .folder-card.design .folder-tab {
+      background: #9b59b6;
+    }
+    .folder-card.design .folder-inner {
+      background: #c39bd3;
+    }
+    
+    .folder-label {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #001f3f;
+      letter-spacing: 0.5px;
+      font-family: 'BlueScreen', 'Courier New', monospace;
+    }
+    
+    .folder-description {
+      text-align: center;
+      font-size: 13px;
+      color: #003d73;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page {
+        padding: 40px 30px;
+      }
+      .folders-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .page-title {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- BACK LINK -->
+    <a href="index.html" class="back-link">← back to home</a>
+    
+    <!-- HEADER -->
+    <div class="header">
+      <h1 class="page-title" data-text="vanessa's projects">vanessa's projects</h1>
+    </div>
+    
+    <!-- FOLDERS -->
+    <div class="folders-grid">
+      
+      <!-- TECHNICAL PROJECTS FOLDER -->
+      <a href="technical.html" class="folder-card technical">
+        <div class="folder-icon">
+          <div class="folder-tab"></div>
+          <div class="folder-main">
+            <div class="folder-inner"></div>
+          </div>
+        </div>
+        <div class="folder-label">TECHNICAL_PROJECTS</div>
+        <div class="folder-description">
+          Engineering projects, prototypes, and technical builds
+        </div>
+      </a>
+      
+      <!-- DESIGN PROJECTS FOLDER -->
+      <a href="design.html" class="folder-card design">
+        <div class="folder-icon">
+          <div class="folder-tab"></div>
+          <div class="folder-main">
+            <div class="folder-inner"></div>
+          </div>
+        </div>
+        <div class="folder-label">DESIGN_PROJECTS</div>
+        <div class="folder-description">
+          Creative work, architecture, and visual design
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</body>
+</html>
