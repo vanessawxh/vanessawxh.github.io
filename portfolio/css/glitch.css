@@ -1,0 +1,42 @@
+/* ============================================================
+   GLITCH.CSS — punctuation "word art" texture layer
+   (RGB-split flicker, scanlines, grain, and noise-field removed
+   per revision brief — kept: ASCII/punctuation dividers and the
+   scramble-reveal-on-scroll heading animation.)
+   ============================================================ */
+
+/* ---------- ASCII / punctuation strips (dividers only) ---------- */
+.ascii-strip{
+  font-family:var(--font-mono);
+  font-size:0.85rem;
+  line-height:1;
+  letter-spacing:1px;
+  white-space:nowrap;
+  overflow:hidden;
+  color:var(--warm-gray);
+  opacity:0.55;
+  user-select:none;
+  pointer-events:none;
+}
+.ascii-strip.dense{ letter-spacing:0.5px; opacity:0.4; font-size:0.75rem; }
+.ascii-strip-wrap{ padding:0 var(--edge); overflow:hidden; }
+.ascii-strip-wrap.contained{ max-width:var(--max); margin:0 auto; }
+.ascii-strip-wrap.top{
+  margin-top:var(--nav-h);
+  padding-block:0.8rem;
+  border-bottom:1px solid var(--line);
+  position:relative; z-index:10;
+  background:var(--navy);
+}
+
+/* ---------- static terminal glyph appended to tech labels ---------- */
+.placeholder-art::after{
+  content:attr(data-tag) " ▮";
+}
+
+/* ---------- scramble-reveal text (animation handled in JS) ---------- */
+.glitch-scramble{ display:inline-block; }
+
+@media (max-width:640px){
+  .ascii-strip{ font-size:0.68rem; letter-spacing:2px; }
+}

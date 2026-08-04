@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#081B33"/>
+  <rect x="4" y="4" width="56" height="56" fill="none" stroke="#F5F3EE" stroke-width="1" opacity="0.35"/>
+  <line x1="9" y1="4" x2="9" y2="9" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="4" y1="9" x2="9" y2="9" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="55" y1="4" x2="55" y2="9" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="55" y1="9" x2="60" y2="9" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="9" y1="55" x2="9" y2="60" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="4" y1="55" x2="9" y2="55" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="55" y1="55" x2="55" y2="60" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <line x1="55" y1="55" x2="60" y2="55" stroke="#F5F3EE" stroke-width="1" opacity="0.6"/>
+  <text x="32" y="34" text-anchor="middle" dominant-baseline="central"
+        font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Noto Sans SC',sans-serif"
+        font-size="38" font-weight="700" fill="#F5F3EE">吳</text>
+</svg>

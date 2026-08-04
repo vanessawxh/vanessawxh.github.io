@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Cost Analysis with Machine Learning — Vanessa Wu</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/glitch.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-mark">vanessa wu <span>/ mechanical engineering</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../industry.html">Industry</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="ascii-strip-wrap top"><div class="ascii-strip" data-pattern="sparkle"></div></div>
+
+<header class="case-hero">
+  <div class="case-hero-copy">
+    <h1 class="glitch-scramble">Flight Cost Analysis with Machine Learning</h1>
+    <div class="ascii-strip on-dark dense" data-pattern="sparkle" style="margin-bottom:1rem; width:100%;"></div>
+    <div class="case-meta">
+      <div><span>Year</span>2025</div>
+      <div><span>Organization</span>E178, Statistics and Data Science</div>
+      <div><span>Role</span>Group Project</div>
+      <div><span>Tools</span>Python</div>
+      <div><span>Tags</span>Engineering · Software</div>
+    </div>
+  </div>
+</header>
+
+<div class="case-body">
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Overview</h2>
+    <div class="case-copy">
+<div class="case-media full">
+        <div class="placeholder-art" data-tag="[HERO IMAGE — FLIGHT COST ANALYSIS WITH MACHINE LEARNING]"><img src="../images/projects/p11-flight-cost/cover.jpg" alt="Flight cost analysis with machine learning — hero photo" loading="lazy" class="placeholder-img"></div>
+      </div>
+      <p>Flight prices can swing wildly based on timing, class, and booking window, making it hard for budget-conscious travelers (especially students) to plan ahead. For this project, our team built a predictive pricing model using a dataset of 300,000+ flights, engineering features like airline, seat class, stops, and days until departure. We trained and compared 50 models across three approaches. First, a LASSO-regularized linear regression, which fits a straight-line relationship between features and price while automatically zeroing out less useful variables; it reached an R² of 0.908 but struggled to price expensive tickets accurately since it couldn't capture the sharp gap between economy and business fares. Second, a random forest, which builds many decision trees on different slices of the data and averages their predictions, making it naturally suited to handling discrete jumps in price like cabin class; after tuning tree count and depth, our best forest hit an R² of 0.955. Third, a neural network (MLP) built in TensorFlow/Keras, which learns non-linear patterns through layers of interconnected nodes; across 30 architectures, our best designs consistently reached R² ≈ 0.948, picking up on subtle interactions between stops, timing, and airline.</p>
+    </div>
+  </div>
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Results</h2>
+    <div class="case-copy">
+      <p>The random forest model (60 estimators, max depth 12) ultimately came out on top, edging out the neural network and outperforming linear regression, which underscored that flight pricing is a fundamentally non-linear problem shaped by discrete pricing tiers rather than smooth trends. The final model offers a practical tool for anticipating price surges and making smarter, more affordable travel decisions.</p>
+      <div class="case-media">
+        <div class="placeholder-art beige" data-tag="[MODEL COMPARISON CHART]"><img src="../images/projects/p11-flight-cost/random-forest-graph.jpg" alt="Random forest — actual vs. predicted price" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Model Development</h2>
+    <div class="case-copy">
+      <div class="media-grid-2">
+        <div class="placeholder-art" data-tag="[LASSO LINEAR REGRESSION MODEL]"><img src="../images/projects/p11-flight-cost/linear-regression-graph.jpg" alt="LASSO linear regression model" loading="lazy" class="placeholder-img"></div>
+        <div class="placeholder-art beige" data-tag="[R² ACROSS LASSO ALPHA VALUES]"><img src="../images/projects/p11-flight-cost/lasso-alpha-graph.jpg" alt="R² across LASSO alpha values" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-nav">
+  <a href="project-10.html"><span class="dir">← Previous</span>Tensile Evaluation of 3D-Printed Filaments at Varying Print Speeds</a>
+  <a href="project-12.html" class="next"><span class="dir">Next Project →</span>Finite Element Method</a>
+</div>
+
+<div class="ascii-strip-wrap contained"><div class="ascii-strip" data-pattern="sparkle"></div></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:vanessaw@berkeley.edu">vanessaw@berkeley.edu</a>
+    </div>
+    <div class="footer-col">
+      <h4>Elsewhere</h4>
+      <a href="https://linkedin.com/in/vanessaryanwu" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-col">
+      <h4>Based At</h4>
+      <p>UC Berkeley, CA</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vanessa Wu</span>
+    <span>Mechanical Engineering · Architecture · Design Innovation</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/glitch.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

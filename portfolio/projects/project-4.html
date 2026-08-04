@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>catdotcom — Vanessa Wu</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/glitch.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-mark">vanessa wu <span>/ mechanical engineering</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../industry.html">Industry</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="ascii-strip-wrap top"><div class="ascii-strip" data-pattern="sparkle"></div></div>
+
+<header class="case-hero">
+  <div class="case-hero-copy">
+    <h1 class="glitch-scramble">catdotcom</h1>
+    <div class="ascii-strip on-dark dense" data-pattern="sparkle" style="margin-bottom:1rem; width:100%;"></div>
+    <div class="case-meta">
+      <div><span>Year</span>2025</div>
+      <div><span>Organization</span>ME 100, Electronics of Internet of Things</div>
+      <div><span>Role</span>Group Project</div>
+      <div><span>Tools</span>Soldering · Matlab</div>
+      <div><span>Tags</span>Engineering · Electrical</div>
+    </div>
+  </div>
+</header>
+
+<div class="case-body">
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Overview</h2>
+    <div class="case-copy">
+<div class="case-media full">
+        <div class="placeholder-art" data-tag="[HERO IMAGE — CATDOTCOM]"><img src="../images/projects/p4-catdotcom/cover.jpg" alt="catdotcom — hero photo" loading="lazy" class="placeholder-img"></div>
+      </div>
+      <p>CATDOTCOM is an automated three-in-one cat toy designed to keep indoor cats active through a sequence of ESP32-controlled components. The system begins with a proximity sensor that triggers audio playback and wirelessly activates a laser module using ESP-NOW. The laser module uses a time-of-flight sensor to detect when the cat catches the laser, then moves it to a new position using two servos. After several successful interactions, a feeder module checks for an existing treat using a load cell and dispenses one if none is detected. All components are monitored and controlled via a live web interface that provides real-time status updates and remote control.</p>
+      <div class="case-media">
+        <div class="placeholder-art beige" data-tag="[FULL SYSTEM ASSEMBLY]"><img src="../images/projects/p4-catdotcom/cover.jpg" alt="Full system assembly" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Component 1 — Control</h2>
+    <div class="case-copy">
+      <p>The control module serves as the central hub of the system, managing communication between all three components and the user interface. It is responsible for initiating the toy's play sequence and coordinating actions across the laser and feeder modules.</p>
+      <p>This module begins by continuously monitoring the environment using an ultrasonic distance sensor. When the cat is detected within a range of 10 cm, the control module activates the play session by playing a song from Mingle, a game featured in Squid Game Season 2. Simultaneously, it transmits a wireless signal via ESP-NOW to the laser module to begin its interaction cycle.</p>
+      <p>In addition to local control, this module integrates the system's Internet of Things (IoT) functionality. It sends real-time data to a web interface, allowing users to monitor the toy remotely. The website provides live updates every second, displaying the cat's distance from the sensor, whether the audio is playing, and includes a manual control button to toggle the system on or off.</p>
+      <p>After the laser module completes its interaction cycle, it sends a signal back to the control module. The control module then forwards a command to the feeder module to dispense a treat, concluding the sequence.</p>
+      <div class="media-grid-2">
+        <div class="placeholder-art steel" data-tag="[CONTROL MODULE WIRING]"><img src="../images/projects/p4-catdotcom/control-wiring.jpg" alt="Control module wiring" loading="lazy" class="placeholder-img"></div>
+        <!-- Missing image: Web interface screenshot -->
+        <div class="placeholder-art gray" data-tag="[WEB INTERFACE SCREENSHOT]"></div>
+      </div>
+    </div>
+  </div>
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Component 2 — Laser Module</h2>
+    <div class="case-copy">
+      <p>The laser module functions as the second stage in the interactive toy sequence and is responsible for providing active engagement with the cat. It is wirelessly triggered by a signal from the control ESP32, upon which the laser diode is activated to begin play.</p>
+      <p>This module uses a time-of-flight sensor that is aligned with the laser beam to detect interruptions in its path. When the sensor identifies that the beam has been blocked, it infers that the cat has successfully “caught” the laser. Upon each successful detection, the module commands a pair of servo motors to reposition the laser diode, creating a new target location for the cat to chase. The two servos provide rotation about two axes, allowing for extensive range of motion of the laser point.</p>
+      <p>After a predefined number of successful interactions, the module turns off both the laser diode and the time of flight sensor. It then sends a signal back to the control ESP32 to initiate the final feeder module.</p>
+      <div class="case-media">
+        <!-- Missing image: Laser module assembly -->
+        <div class="placeholder-art" data-tag="[LASER MODULE ASSEMBLY]"></div>
+      </div>
+    </div>
+  </div>
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Component 3 — Feeder Module</h2>
+    <div class="case-copy">
+      <p>The third and final component of this system is the feeder module, which is responsible for dispensing a treat at the conclusion of the toy's interactive sequence. Upon receiving a signal from the control ESP32, the feeder activates and begins by measuring the current weight on the platform using a bending beam load cell paired with an HX711 amplifier. This measurement is used to determine whether a treat is already present.</p>
+      <p>If the sensor detects a nonzero weight, the system assumes a treat is already available and ends the sequence to prevent overfeeding. If the weight is zero, indicating no treat is present, the module triggers a servo motor to dispense a single treat. After dispensing, the feeder ends the cat's play session, completing the toy's operational cycle.</p>
+      <div class="case-media">
+        <!-- Missing image: Feeder module CAD / photo -->
+        <div class="placeholder-art beige" data-tag="[FEEDER MODULE CAD / PHOTO]"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Team</h2>
+    <div class="case-copy">
+      <div class="case-media full">
+        <div class="placeholder-art" data-tag="[TEAM WITH COMPLETED LASER, FEEDER, AND CONTROL MODULES]"><img src="../images/projects/p4-catdotcom/team-with-modules.jpg" alt="Team with completed laser, feeder, and control modules" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-nav">
+  <a href="project-3.html"><span class="dir">← Previous</span>“Intersection”</a>
+  <a href="project-5.html" class="next"><span class="dir">Next Project →</span>Compressive Evaluation of Composite-Toed Shoes With Varying Infills and Orientations Inserts</a>
+</div>
+
+<div class="ascii-strip-wrap contained"><div class="ascii-strip" data-pattern="sparkle"></div></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:vanessaw@berkeley.edu">vanessaw@berkeley.edu</a>
+    </div>
+    <div class="footer-col">
+      <h4>Elsewhere</h4>
+      <a href="https://linkedin.com/in/vanessaryanwu" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-col">
+      <h4>Based At</h4>
+      <p>UC Berkeley, CA</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vanessa Wu</span>
+    <span>Mechanical Engineering · Architecture · Design Innovation</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/glitch.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

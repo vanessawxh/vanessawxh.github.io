@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tensile Evaluation of 3D-Printed Filaments at Varying Print Speeds — Vanessa Wu</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/glitch.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-mark">vanessa wu <span>/ mechanical engineering</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../industry.html">Industry</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="ascii-strip-wrap top"><div class="ascii-strip" data-pattern="sparkle"></div></div>
+
+<header class="case-hero">
+  <div class="case-hero-copy">
+    <h1 class="glitch-scramble">Tensile Evaluation of 3D-Printed Filaments at Varying Print Speeds</h1>
+    <div class="ascii-strip on-dark dense" data-pattern="sparkle" style="margin-bottom:1rem; width:100%;"></div>
+    <div class="case-meta">
+      <div><span>Year</span>2026</div>
+      <div><span>Organization</span>ME 103, Experimentation and Measurements</div>
+      <div><span>Role</span>Group Project</div>
+      <div><span>Tools</span>Instron · Bambu Labs · Matlab</div>
+      <div><span>Tags</span>Engineering · Materials · Manufacturing</div>
+    </div>
+  </div>
+</header>
+
+<div class="case-body">
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Overview</h2>
+    <div class="case-copy">
+<div class="case-media full">
+        <div class="placeholder-art" data-tag="[HERO IMAGE — TENSILE EVALUATION OF 3D-PRINTED FILAMENTS AT VARYING PRINT SPEEDS]"><img src="../images/projects/p10-tensile/cover.jpg" alt="Tensile evaluation of 3D-printed filaments — hero photo" loading="lazy" class="placeholder-img"></div>
+      </div>
+      <p>Designed and executed a full factorial experiment investigating how internal FDM print speed affects the tensile behavior of three common 3D printing filaments: PLA, PETG, and ASA. Fabricated 60 ASTM D638 dog bone specimens across 15 treatment combinations using a Bambu P1S printer, which was varied from 50 to 800 mm/s. Prior to testing, performed dimensional verification on all 60 specimens using digital calipers and stored them in airtight containers to minimize moisture absorption.</p>
+      <div class="case-media">
+        <div class="placeholder-art beige" data-tag="[DOG BONE SPECIMEN SET]"><img src="../images/projects/p10-tensile/dog-bone-specimen-set.jpg" alt="PLA dog bone specimen set" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Testing</h2>
+    <div class="case-copy">
+      <p>Conducted uniaxial tensile testing on a 20 lbf Instron 5500 machine, calibrating the load cell against five known static loads and deriving a linear correction function applied to all raw force data. Converted force-displacement outputs into stress-strain curves in MATLAB, using individually measured cross-sectional areas per specimen to reduce systematic dimensional error. Performed full uncertainty propagation using root-sum-square (RSS) methods, accounting for load cell resolution, crosshead encoder precision, and caliper measurement variability across all 60 specimens.</p>
+      <div class="case-media">
+        <div class="placeholder-art steel" data-tag="[INSTRON TESTING SETUP]"><img src="../images/projects/p10-tensile/instron-testing-setup.jpg" alt="Instron load-cell calibration setup" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Results</h2>
+    <div class="case-copy">
+      <p>Conducted three layers of statistical analysis at a 5% significance level. Results showed that material choice was the dominant factor controlling both UTS and ductility, while print speed alone produced no statistically significant main effect. However, the material-speed interaction was significant, with PLA showing a clear and statistically significant decrease in ductility at higher speeds.</p>
+      <div class="case-media">
+        <div class="placeholder-art gray" data-tag="[STRESS-STRAIN CURVE PLOTS]"><img src="../images/projects/p10-tensile/stress-strain-pla.jpg" alt="Stress-strain curve — PLA" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Additional Specimens</h2>
+    <div class="case-copy">
+      <div class="media-grid-2">
+        <div class="placeholder-art" data-tag="[PETG SPECIMEN SET]"><img src="../images/projects/p10-tensile/petg-specimen.jpg" alt="PETG specimen set" loading="lazy" class="placeholder-img"></div>
+        <div class="placeholder-art beige" data-tag="[ASA SPECIMEN SET]"><img src="../images/projects/p10-tensile/asa-specimen.jpg" alt="ASA specimen set" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Stress-Strain Comparisons</h2>
+    <div class="case-copy">
+      <div class="media-grid-2">
+        <div class="placeholder-art" data-tag="[STRESS-STRAIN CURVE — PETG]"><img src="../images/projects/p10-tensile/stress-strain-petg.jpg" alt="Stress-strain curve — PETG" loading="lazy" class="placeholder-img"></div>
+        <div class="placeholder-art beige" data-tag="[STRESS-STRAIN CURVE — ASA]"><img src="../images/projects/p10-tensile/stress-strain-asa.jpg" alt="Stress-strain curve — ASA" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-row reveal">
+    <h2 class="glitch-scramble">Elongation at Break</h2>
+    <div class="case-copy">
+      <div class="media-grid-3">
+        <div class="placeholder-art" data-tag="[PLA ELONGATION AT BREAK]"><img src="../images/projects/p10-tensile/pla-elongation.jpg" alt="PLA elongation at break" loading="lazy" class="placeholder-img"></div>
+        <div class="placeholder-art beige" data-tag="[PETG ELONGATION AT BREAK]"><img src="../images/projects/p10-tensile/petg-elongation.jpg" alt="PETG elongation at break" loading="lazy" class="placeholder-img"></div>
+        <div class="placeholder-art steel" data-tag="[ASA ELONGATION AT BREAK]"><img src="../images/projects/p10-tensile/asa-elongation.jpg" alt="ASA elongation at break" loading="lazy" class="placeholder-img"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-nav">
+  <a href="project-9.html"><span class="dir">← Previous</span>Generation 11 Occupant Cell</a>
+  <a href="project-11.html" class="next"><span class="dir">Next Project →</span>Flight Cost Analysis with Machine Learning</a>
+</div>
+
+<div class="ascii-strip-wrap contained"><div class="ascii-strip" data-pattern="sparkle"></div></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:vanessaw@berkeley.edu">vanessaw@berkeley.edu</a>
+    </div>
+    <div class="footer-col">
+      <h4>Elsewhere</h4>
+      <a href="https://linkedin.com/in/vanessaryanwu" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-col">
+      <h4>Based At</h4>
+      <p>UC Berkeley, CA</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vanessa Wu</span>
+    <span>Mechanical Engineering · Architecture · Design Innovation</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/glitch.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>
